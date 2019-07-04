@@ -10,22 +10,31 @@ import android.widget.Toolbar;
 public class ReceiverActivity extends AppCompatActivity {
     TextView tvName;
     TextView tvAge;
+    String name;
+    String age;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiver);
-        Toolbar toolbar=findViewById(R.id.toolbar);
-        Bundle extras=getIntent().getExtras();
-        if(extras!=null);
-        String names=extras.getString("etName");
-        String ages=extras.getString("etAge");
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) ;
+        {
+            String names = extras.getString("etName");
+            String ages = extras.getString("etAge");
+            tvName.setText(name);
+            tvAge.setText(age);
+
+
+
+
+
+        }
+
+
     }
-
-
-
-
-
-    
 
 }

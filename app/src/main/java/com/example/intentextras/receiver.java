@@ -6,8 +6,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 public class receiver extends AppCompatActivity {
+    TextView tvName;
+    TextView tvAge;
+    String names;
+    String ages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +20,16 @@ public class receiver extends AppCompatActivity {
         setContentView(R.layout.activity_receiver);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        tvName=findViewById(R.id.tvName);
+        tvAge=findViewById(R.id.tvAge);
+        Bundle extras =getIntent().getExtras();
+        if (extras!=null){
+            String name=extras.getString("etName");
+            String age=extras.getString("etAge");
+            tvName.setText(name);
+            tvAge.setText(age);
+        }
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
